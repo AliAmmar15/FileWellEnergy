@@ -1,0 +1,140 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import {
+  Outlet,
+  Link,
+  createRootRouteWithContext,
+  useRouter,
+  HeadContent,
+  Scripts,
+  type ErrorComponentProps,
+} from "@tanstack/react-router";
+import { useEffect, type ReactNode } from "react";
+
+import appCss from "../styles.css?url";
+import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { Button } from "@/components/ui/button";
+import { SITE, UTM_KEY } from "@/lib/site";
+
+function NotFoundComponent() {
+  return (
+    <div className="container-page flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
+      <p className="eyebrow">404</p>
+      <h1 className="mt-3 text-4xl font-bold">We couldn't find that page</h1>
+      <p className="mt-3 max-w-md text-muted-foreground">The page may have moved. You can head home or get your free compliance check.</p>
+      <div className="mt-8 flex flex-wrap justify-center gap-3">
+        <Button asChild variant="cta" size="xl"><Link to="/free-check">Get a free compliance check</Link></Button>
+        <Button asChild variant="outlineBrand" size="xl"><Link to="/">Go home</Link></Button>
+      </div>
+    </div>
+  );
+}
+
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
+  console.error(error);
+  const router = useRouter();
+  useEffect(() => {
+    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+  }, [error]);
+
+  return (
+    <div className="container-page flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
+      <h1 className="text-2xl font-bold">This page didn't load</h1>
+      <p className="mt-2 text-muted-foreground">Something went wrong on our end. Try again or head back home.</p>
+      <div className="mt-6 flex flex-wrap justify-center gap-2">
+        <Button variant="cta" onClick={() => { router.invalidate(); reset(); }}>Try again</Button>
+        <Button asChild variant="outlineBrand"><a href="/">Go home</a></Button>
+      </div>
+    </div>
+  );
+}
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: SITE.legalName,
+  description: SITE.description,
+  areaServed: [
+    { "@type": "City", name: "Detroit, Michigan" },
+    ...["Ann Arbor", "Indianapolis", "Columbus", "Chicago", "Kansas City", "St. Louis", "Milwaukee", "Minneapolis"].map((name) => ({ "@type": "City", name })),
+  ],
+  address: { "@type": "PostalAddress", addressLocality: "Detroit", addressRegion: "MI", addressCountry: "US" },
+  telephone: SITE.phone,
+  email: SITE.email,
+  priceRange: "$$",
+};
+
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  head: () => ({
+    meta: [
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "Filewell Energy — Detroit Energy & Water Benchmarking" },
+      { name: "description", content: SITE.description },
+      { property: "og:site_name", content: "Filewell Energy" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#133F4F" },
+    ],
+    links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap",
+      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
+    ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(orgJsonLd) }],
+  }),
+  shellComponent: RootShell,
+  component: RootComponent,
+  notFoundComponent: NotFoundComponent,
+  errorComponent: ErrorComponent,
+});
+
+function RootShell({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <HeadContent />
+        {/*
+          Cookie-free analytics placeholder (Plausible). Uncomment and set your domain to enable:
+          <script defer data-domain="filewellenergy.com" src="https://plausible.io/js/script.js"></script>
+        */}
+      </head>
+      <body>
+        {children}
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+
+function useCaptureUtm() {
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search);
+    const utm = { utm_source: p.get("utm_source"), utm_medium: p.get("utm_medium"), utm_campaign: p.get("utm_campaign") };
+    if (utm.utm_source || utm.utm_medium || utm.utm_campaign) {
+      sessionStorage.setItem(UTM_KEY, JSON.stringify(utm));
+    }
+  }, []);
+}
+
+function RootComponent() {
+  const { queryClient } = Route.useRouteContext();
+  useCaptureUtm();
+  return (
+    <QueryClientProvider client={queryClient}>
+      <div className="flex min-h-screen flex-col">
+        <SiteHeader />
+        <main id="main" className="flex-1">
+          <Outlet />
+        </main>
+        <SiteFooter />
+      </div>
+    </QueryClientProvider>
+  );
+}
