@@ -29,6 +29,7 @@ export const Route = createFileRoute("/detroit-benchmarking-guide")({
 const TOC = [
   ["requires", "What the ordinance requires"],
   ["covered", "Which buildings are covered"],
+  ["exemptions", "Exemptions"],
   ["deadlines", "Deadlines"],
   ["data", "What data you need"],
   ["dbid", "How to find your Detroit Building ID"],
@@ -86,8 +87,9 @@ function Guide() {
 
           <S id="requires" title="What the ordinance requires">
             <p>Detroit's Energy and Water Benchmarking Ordinance asks owners of larger buildings to measure and report how much energy and water their building uses each year. The idea is simple: what gets measured can be compared, and what can be compared can be improved.</p>
-            <p>In practice, that means each covered building must gather a full year of utility data, enter it into the U.S. EPA's free ENERGY STAR Portfolio Manager tool, and submit the results to the City. Some years, the report must also be checked and attested to by a certified professional.</p>
+            <p>In practice, that means each covered building must gather a full year of utility data, enter it into the U.S. EPA's free ENERGY STAR Portfolio Manager tool, and submit the results to the City. When the City calls for it, the report must also be checked and attested to by a certified professional.</p>
             <p>The City's public dataset (Sept 2025) lists about 2,900 covered buildings, with only about 1 in 5 marked compliant (Source: City of Detroit open data). If you haven't filed yet, you're far from alone — but it's worth getting ahead of. The City's own page is the best place to confirm details: <a href={LINKS.cityBenchmarking} {...ext}>detroitmi.gov/benchmarking</a>.</p>
+            <p>Each building's compliance status, size and age are published on the City's public transparency map, so you can see how your building (and your neighbors) appear.</p>
           </S>
 
           <S id="covered" title="Which buildings are covered">
@@ -100,6 +102,10 @@ function Guide() {
           </S>
           <InlineCta />
 
+          <S id="exemptions" title="Exemptions">
+            <p>Buildings that are vacant, slated for demolition or under 25,000 sq ft may qualify for a whole-building exemption. Buildings with water or energy shutoffs in the past year may qualify for a data exemption. Owners request exemptions through the City's form, and we can help.</p>
+          </S>
+
           <S id="deadlines" title="Deadlines">
             <p>Reports are due <strong>June 1 every year</strong> and cover the previous calendar year. For example, the June 1, 2027 filing covers January–December 2026 data.</p>
             <p>Because utilities and tenants can take weeks to respond, we recommend having your information gathered by April 1. That leaves room to fix any data issues before the June 1 benchmarking deadline in Detroit.</p>
@@ -109,10 +115,11 @@ function Guide() {
             <p>You'll need 12 months (January through December) of whole-building data for each energy and water source the building uses:</p>
             <ul>
               <li><strong>Electricity</strong> — usually DTE Energy.</li>
-              <li><strong>Natural gas</strong> — DTE Energy or Consumers Energy.</li>
+              <li><strong>Natural gas</strong> — DTE Energy or Constellation.</li>
               <li><strong>Steam</strong> — Detroit Thermal, if the building uses district steam.</li>
-              <li><strong>Water</strong> — the Detroit Water and Sewerage Department (DWSD).</li>
+              <li><strong>Water</strong> — the Detroit Water and Sewerage Department (DWSD). Water is usually billed in thousand gallons, so match the unit on your bill when you enter it.</li>
             </ul>
+            <p>Automating DTE data through the Energy Data Hub starts with joining the Detroit 2030 District; you can also enter 12 months of bills manually.</p>
             <p>You'll also need building basics: address, year built, gross floor area excluding parking, occupancy and how the space is used.</p>
           </S>
           <InlineCta />
@@ -129,34 +136,34 @@ function Guide() {
               <li>Enter the Detroit Building ID in the property's details.</li>
               <li>Add a meter for each utility and enter (or connect) 12 months of data.</li>
               <li>Run the built-in data quality checker and fix any gaps or outliers.</li>
-              <li>Share or submit the report to the City as instructed on the City's benchmarking page.</li>
+              <li>Share the property with the City: search for the username "DetroitSustainability" (it appears as "Detroit Benchmarking Reporting"), then share with Bulk Sharing and Exchange Data Full Access.</li>
             </ol>
             <p>For many Detroit property managers, the trickiest part of using ENERGY STAR Portfolio Manager is not the tool itself — it's getting clean, complete data into it.</p>
           </S>
           <InlineCta />
 
           <S id="tenant-consent" title="Tenant consent forms for DTE whole-building data">
-            <p>DTE can provide whole-building, aggregated data so you don't need every tenant's individual bill. But if tenants pay their own utilities and the building has <strong>fewer than six tenants</strong>, DTE needs each tenant's signed consent before it releases the data.</p>
+            <p>DTE can provide whole-building, aggregated data so you don't need every tenant's individual bill. But if tenants pay their own utilities and the building has <strong>fewer than five tenants</strong>, DTE needs each tenant's signed consent before it releases the data.</p>
             <p>Collecting those forms — and following up on them — is often the slowest step. Plan for it early.</p>
           </S>
 
           <S id="verification" title="Verification by a certified professional">
-            <p>Under the ordinance, a certified professional must attest to the data <strong>before the first deadline and every third deadline after</strong>. That can be a Michigan-licensed professional engineer or registered architect, or another trained individual acceptable to the City's BSEED department.</p>
+            <p>Verification by a certified professional is <strong>required when the City calls for it</strong>. We'll confirm whether your building needs it. The professional can be a Michigan-licensed professional engineer or registered architect, or another trained individual acceptable to the City's BSEED department.</p>
             <p>Verification is a separate professional service. Filewell arranges it through licensed engineering partners when it's due.</p>
           </S>
           <InlineCta />
 
           <S id="noncompliance" title="What happens if you don't comply">
-            <p>Noncompliance can result in a blight violation notice with a civil fine. Beyond the notice itself, it's one more item for owners, lenders and buyers to deal with — usually at an inconvenient time. Filing each year avoids the issue.</p>
+            <p>Noncompliance can result in a blight violation notice with a civil fine under Sec. 8-15-582(b) of the ordinance. Beyond the notice itself, it's one more item for owners, lenders and buyers to deal with — usually at an inconvenient time. Filing each year avoids the issue.</p>
           </S>
 
           <S id="diy" title="Do it yourself vs. hire help">
             <p>To be fair: you can absolutely do this yourself. Portfolio Manager is free, and the City publishes guidance. If you manage one building with a single utility account and no tenant-paid utilities, a careful afternoon or two may be enough.</p>
-            <p>Most managers hire help when they have several buildings, tenant-paid utilities, steam service, or a verification year. Collecting utility data and tenant forms takes time, and mistakes can mean refiling. A service like ours trades a flat fee for that time and risk.</p>
+            <p>Most managers hire help when they have several buildings, tenant-paid utilities, steam service, or a year when verification is required. Collecting utility data and tenant forms takes time, and mistakes can mean refiling. A service like ours trades a flat fee for that time and risk.</p>
           </S>
 
           <S id="help" title="How Filewell can help">
-            <p>Filewell handles benchmarking compliance in Detroit end to end: collecting 12 months of utility and water data, chasing tenant consent forms, setting up and cleaning up Portfolio Manager, running data quality checks, arranging the required verification by a Michigan-licensed engineering partner, submitting to the City and sending you a one-page summary.</p>
+            <p>Filewell handles benchmarking compliance in Detroit end to end: collecting 12 months of utility and water data, chasing tenant consent forms, setting up and cleaning up Portfolio Manager, running data quality checks, arranging verification, when it's required, by a Michigan-licensed engineering partner, submitting to the City and sending you a one-page summary.</p>
             <p>Pricing is flat and per building — see <Link to="/pricing">our pricing</Link>. Start with a <Link to="/free-check">free compliance check</Link> and we'll tell you exactly where your building stands.</p>
             <h3>Official sources</h3>
             <ul>

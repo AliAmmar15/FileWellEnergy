@@ -48,7 +48,7 @@ function Home() {
               Detroit benchmarking filings, <span className="text-primary">handled for you.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg">
-              Detroit requires buildings of 25,000 sq ft and up to report energy and water use every year. Filewell collects the data, deals with the utilities and tenants, arranges the engineer's verification and files it with the City. One flat fee per building.
+              Detroit requires buildings of 25,000 sq ft and up to report energy and water use every year. Filewell collects the data, deals with the utilities and tenants, arranges verification when the City requires it and files it with the City. One flat fee per building.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="cta" size="xl"><Link to="/free-check">Get a free compliance check</Link></Button>
@@ -94,7 +94,7 @@ function Home() {
             </div>
             <div className="border-t-4 border-primary pt-5">
               <h3>What happens if you don't file</h3>
-              <p className="mt-2">The City can issue a blight violation notice with a civil fine. A certified professional must also verify the data the first year and every third year.</p>
+              <p className="mt-2">The City can issue a blight violation notice with a civil fine under Sec. 8-15-582(b) of the ordinance. Verification by a certified professional is required when the City calls for it. We'll confirm whether your building needs it.</p>
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ function Home() {
             <p className="mt-4">You send us a few documents. We handle everything else, from the first utility request to the City's confirmation.</p>
             <ul className="mt-6 space-y-3">
               {[
-                "Utility data from DTE Energy, Consumers Energy, Detroit Thermal and DWSD",
+                "Utility data from DTE Energy, Constellation, Detroit Thermal and DWSD",
                 "Tenant consent forms prepared and followed up",
                 "ENERGY STAR Portfolio Manager setup or cleanup, with your Detroit Building ID",
                 "Data quality checks before anything is submitted",

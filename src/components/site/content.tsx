@@ -18,7 +18,7 @@ export const STEPS = [
   {
     title: "We gather the data",
     short: "Utilities, water, tenant consents.",
-    long: "We request 12 months of electricity, gas, steam and water data from DTE Energy, Consumers Energy, Detroit Thermal and the Detroit Water and Sewerage Department. If tenants pay their own utilities, we prepare the DTE consent forms and follow up until they're signed.",
+    long: "We request 12 months of electricity, gas, steam and water data from DTE Energy, Constellation, Detroit Thermal and the Detroit Water and Sewerage Department. If tenants pay their own utilities, we prepare the DTE consent forms and follow up until they're signed.",
     need: "Utility account and meter numbers, bills or online access, and a tenant list if tenants pay their own utilities.",
   },
   {
@@ -29,8 +29,8 @@ export const STEPS = [
   },
   {
     title: "Licensed verification",
-    short: "Arranged with our engineering partner when due.",
-    long: "The first filing and every third one after require a certified professional to attest to the data. When yours is due, we arrange it with a Michigan-licensed engineering partner and handle the paperwork.",
+    short: "Arranged with our engineering partner when the City requires it.",
+    long: "Required when the City calls for it. We'll confirm whether your building needs it. If it does, we arrange it with a Michigan-licensed engineering partner and handle the paperwork.",
     need: "Usually nothing extra — occasionally a quick question about the building.",
   },
   {
@@ -54,10 +54,12 @@ export const FAQS: QA[] = [
     ),
   },
   { q: "When is the deadline?", a: "June 1 every year, for the previous calendar year's data." },
-  { q: "What happens if I don't file?", a: "The City can issue a blight violation notice with a civil fine." },
+  { q: "What happens if I don't file?", a: "The City can issue a blight violation notice with a civil fine under Sec. 8-15-582(b) of the ordinance." },
   { q: "What's a Detroit Building ID?", a: "The City's unique ID for your building, entered in Portfolio Manager so the City can match your report." },
-  { q: "Do my tenants need to do anything?", a: "If tenants pay their own utilities and there are fewer than six, each signs a DTE consent form so DTE can release whole-building data. We prepare the forms and follow up." },
-  { q: "What is verification and why does it cost extra?", a: "The ordinance requires a certified professional to attest to the data the first year and every third year. A licensed engineer performs it, which is a separate professional service." },
+  { q: "Do my tenants need to do anything?", a: "If tenants pay their own utilities and there are fewer than five, each signs a DTE consent form so DTE can release whole-building data. We prepare the forms and follow up." },
+  { q: "What is verification and why does it cost extra?", a: "Required when the City calls for it. We'll confirm whether your building needs it. A licensed engineer performs it, which is a separate professional service." },
+  { q: "Where can I see my building's compliance status?", a: "Compliance status, building size and building age are published on the City's public transparency map." },
+  { q: "Can my building be exempt?", a: "Buildings that are vacant, slated for demolition or under 25,000 sq ft may qualify for a whole-building exemption. Buildings with water or energy shutoffs in the past year may qualify for a data exemption. Owners request exemptions through the City's form, and we can help." },
   { q: "Can't I do it myself?", a: "Yes; Portfolio Manager is free. Most managers hire help because collecting utility data and tenant forms takes time and mistakes can mean refiling." },
   { q: "How long does it take?", a: "Usually two to six weeks, depending mostly on how fast utilities and tenants respond. Get your information to us by April 1." },
   {

@@ -7,7 +7,7 @@ export const SITE = {
   founder: "Ali Ammar",
   phone: "586-668-5858",
   email: "aammar0712@gmail.com",
-  guideUpdated: "November 9, 2026",
+  guideUpdated: "November 10, 2026",
   tagline: "We file it. You're covered.",
   description:
     "Filewell Energy handles Detroit energy and water benchmarking filings for commercial and multifamily buildings — flat fee, done for you, local.",
