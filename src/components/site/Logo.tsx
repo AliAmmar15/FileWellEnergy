@@ -1,27 +1,17 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/filewell-logo.webp";
 import { cn } from "@/lib/utils";
 
-/** Wordmark: a single "filed" square beside the name, like one cell from the building grid. */
-export function LogoMark({ className }: { className?: string }) {
-  return <span aria-hidden="true" className={cn("inline-block h-3.5 w-3.5 bg-primary", className)} />;
-}
-
-export function Logo({ inverted = false }: { inverted?: boolean }) {
-  if (!inverted) {
-    return (
-      <Link to="/" className="flex min-h-11 items-center" aria-label="Filewell Energy home">
-        {/* multiply drops the logo's off-white background onto the page background */}
-        <img src={logo} width={480} height={210} alt="Filewell Energy" className="h-14 w-auto mix-blend-multiply" />
-      </Link>
-    );
-  }
+/** Lakeline Energy logo. `white` is the all-white version for dark backgrounds. */
+export function Logo({ white = false, className }: { white?: boolean; className?: string }) {
   return (
-    <Link to="/" className="flex min-h-11 items-center gap-2.5" aria-label="Filewell Energy home">
-      <LogoMark />
-      <span className="whitespace-nowrap font-display text-[22px] font-extrabold leading-none tracking-tight text-primary-foreground">
-        Filewell <span className="font-semibold text-primary">Energy</span>
-      </span>
+    <Link to="/" className="inline-flex min-h-11 items-center" aria-label="Lakeline Energy home">
+      <img
+        src={white ? "/brand/lakeline-logo-horizontal-white.svg" : "/brand/lakeline-logo-horizontal.svg"}
+        width={467}
+        height={100}
+        alt="Lakeline Energy"
+        className={cn("h-7 w-auto sm:h-9 lg:h-10", className)}
+      />
     </Link>
   );
 }

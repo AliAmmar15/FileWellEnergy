@@ -1,12 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { NAV, SITE } from "@/lib/site";
+import { Logo } from "./Logo";
 
 export function SiteFooter() {
   return (
     <footer className="bg-footer text-primary-foreground">
       <div className="container-page grid gap-10 py-14 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)]">
         <div>
-          <p className="text-xl font-bold">Filewell Energy</p>
+          <Logo white className="h-9 lg:h-10" />
           <p className="mt-4 max-w-sm text-primary-foreground/80">
             Detroit energy and water benchmarking, filed for you. Serving Detroit and Midwest cities with benchmarking laws.
           </p>
@@ -29,7 +30,7 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {SITE.legalName} · <Link to="/privacy" className="underline">Privacy</Link> · <Link to="/terms" className="underline">Terms</Link>
           </p>
           <p className="max-w-xl">
-            Filewell Energy is not affiliated with the City of Detroit or the U.S. EPA. ENERGY STAR® is a registered mark of the U.S. EPA. Photographs from Wikimedia Commons, credited where shown.
+            Lakeline Energy is not affiliated with the City of Detroit or the U.S. EPA. ENERGY STAR® is a registered mark of the U.S. EPA. Photographs from Wikimedia Commons, credited where shown.
           </p>
         </div>
       </div>

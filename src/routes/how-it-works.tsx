@@ -8,7 +8,7 @@ import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/how-it-works")({
   head: () =>
     seo({
-      title: "How Our Detroit Benchmarking Service Works | Filewell Energy",
+      title: "How Our Detroit Benchmarking Service Works | Lakeline Energy",
       description:
         "Six steps from free check to filed: utility data, tenant consents, ENERGY STAR Portfolio Manager setup, licensed verification and submission before the June 1 Detroit deadline.",
       path: "/how-it-works",
@@ -38,7 +38,7 @@ const YEAR = [
 function HowItWorks() {
   return (
     <>
-      <PageIntro photo="fisher" title="How Filewell handles your benchmarking">
+      <PageIntro photo="fisher" title="How Lakeline handles your benchmarking">
         One agreement, one point of contact, and a filing submitted to the City before the June 1 benchmarking deadline in Detroit.
       </PageIntro>
 

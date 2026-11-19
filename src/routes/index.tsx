@@ -12,9 +12,9 @@ import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/")({
   head: () =>
     seo({
-      title: "Detroit Energy Benchmarking Filings, Handled | Filewell Energy",
+      title: "Detroit Energy Benchmarking Filings, Handled | Lakeline Energy",
       description:
-        "Filewell files your building's energy and water benchmarking report with the City of Detroit for a flat fee. Get a free compliance check.",
+        "Lakeline files your building's energy and water benchmarking report with the City of Detroit for a flat fee. Get a free compliance check.",
       path: "/",
     }),
   component: Home,
@@ -48,7 +48,7 @@ function Home() {
               Detroit benchmarking filings, <span className="text-primary">handled for you.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg">
-              Detroit requires buildings of 25,000 sq ft and up to report energy and water use every year. Filewell collects the data, deals with the utilities and tenants, arranges verification when the City requires it and files it with the City. One flat fee per building.
+              Detroit requires buildings of 25,000 sq ft and up to report energy and water use every year. Lakeline collects the data, deals with the utilities and tenants, arranges verification when the City requires it and files it with the City. One flat fee per building.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="cta" size="xl"><Link to="/free-check">Get a free compliance check</Link></Button>

@@ -12,7 +12,7 @@ import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/pricing")({
   head: () =>
     seo({
-      title: "Detroit Benchmarking Pricing — From $600 per Building | Filewell",
+      title: "Detroit Benchmarking Pricing — From $600 per Building | Lakeline Energy",
       description:
         "Flat, per-building pricing for Detroit energy benchmarking: $750, $675 or $600 per building by portfolio size. Licensed verification $600. Free compliance check.",
       path: "/pricing",

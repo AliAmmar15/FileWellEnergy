@@ -7,9 +7,9 @@ import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/about")({
   head: () =>
     seo({
-      title: "About Filewell Energy — Detroit Benchmarking Specialists",
+      title: "About Lakeline Energy — Detroit Benchmarking Specialists",
       description:
-        "Filewell Energy is a Detroit company that makes the City's energy and water benchmarking requirement painless for property managers and building owners.",
+        "Lakeline Energy is a Detroit company that makes the City's energy and water benchmarking requirement painless for property managers and building owners.",
       path: "/about",
     }),
   component: About,
@@ -18,11 +18,11 @@ export const Route = createFileRoute("/about")({
 function About() {
   return (
     <>
-      <PageIntro photo="skyline" eyebrow="About" title="About Filewell Energy" />
+      <PageIntro photo="skyline" eyebrow="About" title="About Lakeline Energy" />
       <section className="container-page max-w-3xl space-y-5 py-16 text-lg leading-relaxed">
         {/* TODO: add a founder photo here (use a two-column layout: photo + text) */}
-        <p>{SITE.founder} started Filewell Energy in Detroit to make the City's benchmarking requirement painless for the people who manage our buildings.</p>
-        <p>On paper the rule is simple. In practice it's one more deadline buried in portals, utility data and unfamiliar terms. Filewell exists to take that off your plate: you send us what we need, we handle the filing, and you know the price before we start. We'd rather give you a straight answer than leave you guessing whether you're covered.</p>
+        <p>{SITE.founder} started Lakeline Energy in Detroit to make the City's benchmarking requirement painless for the people who manage our buildings.</p>
+        <p>On paper the rule is simple. In practice it's one more deadline buried in portals, utility data and unfamiliar terms. Lakeline exists to take that off your plate: you send us what we need, we handle the filing, and you know the price before we start. We'd rather give you a straight answer than leave you guessing whether you're covered.</p>
         <p>We're based in Detroit and also serve other Midwest cities with benchmarking laws, including Ann Arbor, Indianapolis, Columbus, Chicago, Kansas City, St. Louis, Milwaukee and Minneapolis.</p>
       </section>
 

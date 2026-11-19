@@ -16,7 +16,7 @@ const faqSchema = {
 export const Route = createFileRoute("/faq")({
   head: () => ({
     ...seo({
-      title: "Detroit Benchmarking Ordinance FAQ | Filewell Energy",
+      title: "Detroit Benchmarking Ordinance FAQ | Lakeline Energy",
       description:
         "Answers about the Detroit benchmarking ordinance: who's covered, the June 1 deadline, Detroit Building IDs, tenant consent forms, verification and costs.",
       path: "/faq",

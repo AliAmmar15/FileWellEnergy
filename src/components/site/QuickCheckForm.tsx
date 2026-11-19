@@ -65,7 +65,7 @@ export function QuickCheckForm() {
       <div className="sm:col-span-2">
         <label className="flex min-h-11 items-start gap-3 text-[15px] text-primary-foreground">
           <input {...a("consent")} type="checkbox" className="mt-1 h-5 w-5 accent-highlight" checked={f.consent} onChange={set("consent")} />
-          I agree Filewell Energy may contact me about my compliance check.
+          I agree Lakeline Energy may contact me about my compliance check.
         </label>
         {er("consent")}
       </div>

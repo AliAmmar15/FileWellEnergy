@@ -15,7 +15,7 @@ export function SampleCheckCard() {
         Sample
       </span>
       <p className="font-display text-xl font-bold">Compliance check</p>
-      <p className="mt-1 text-[15px] text-muted-foreground">Prepared by Filewell Energy</p>
+      <p className="mt-1 text-[15px] text-muted-foreground">Prepared by Lakeline Energy</p>
       <dl className="mt-5 border-t-2 border-foreground text-[15px]">
         {rows.map(([k, v, rust]) => (
           <div key={k} className="grid grid-cols-[8rem_1fr] gap-4 border-b border-border py-2.5">

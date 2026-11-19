@@ -2,15 +2,15 @@
 // Site-wide contact details. email is temporary — swap for a branded address once the domain is set up.
 // ============================================================
 export const SITE = {
-  name: "Filewell Energy",
-  legalName: "Filewell Energy LLC",
+  name: "Lakeline Energy",
+  legalName: "Lakeline Energy",
   founder: "Ali Ammar",
   phone: "586-668-5858",
   email: "aammar0712@gmail.com",
   guideUpdated: "November 10, 2026",
   tagline: "We file it. You're covered.",
   description:
-    "Filewell Energy handles Detroit energy and water benchmarking filings for commercial and multifamily buildings — flat fee, done for you, local.",
+    "Lakeline Energy handles Detroit energy and water benchmarking filings for commercial and multifamily buildings — flat fee, done for you, local.",
 };
 
 export const LINKS = {
@@ -27,4 +27,4 @@ export const NAV = [
   { to: "/faq", label: "FAQ" },
 ] as const;
 
-export const UTM_KEY = "filewell_utm";
+export const UTM_KEY = "lakeline_utm";

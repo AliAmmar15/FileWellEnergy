@@ -11,7 +11,7 @@ import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/am-i-covered")({
   head: () =>
     seo({
-      title: "Am I Covered by Detroit's Benchmarking Ordinance? | Filewell",
+      title: "Am I Covered by Detroit's Benchmarking Ordinance? | Lakeline Energy",
       description:
         "Check in seconds whether your Detroit building must report energy and water use under the benchmarking ordinance. Free, no sign-up, nothing stored.",
       path: "/am-i-covered",

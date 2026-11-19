@@ -11,7 +11,7 @@ import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/contact")({
   head: () =>
     seo({
-      title: "Contact Filewell Energy — Detroit Benchmarking Help",
+      title: "Contact Lakeline Energy — Detroit Benchmarking Help",
       description: "Questions about Detroit energy benchmarking? Call, email or send a message. We reply within one business day.",
       path: "/contact",
     }),
@@ -50,7 +50,7 @@ function Contact() {
 
   return (
     <>
-      <PageIntro photo="midtown" eyebrow="Contact" title="Talk to Filewell">We reply within one business day.</PageIntro>
+      <PageIntro photo="midtown" eyebrow="Contact" title="Talk to Lakeline">We reply within one business day.</PageIntro>
       <section className="container-page grid gap-10 py-14 lg:grid-cols-[1fr_1.3fr]">
         <div className="space-y-5">
           <ul className="space-y-4 rounded-xl bg-card p-6">

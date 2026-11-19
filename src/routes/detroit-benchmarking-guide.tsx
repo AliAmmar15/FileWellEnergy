@@ -11,7 +11,7 @@ const TITLE = "Detroit's Energy and Water Benchmarking Ordinance: A Plain-Englis
 export const Route = createFileRoute("/detroit-benchmarking-guide")({
   head: () => ({
     ...seo({
-      title: "Detroit Benchmarking Ordinance Guide (Plain English) | Filewell",
+      title: "Detroit Benchmarking Ordinance Guide (Plain English) | Lakeline Energy",
       description:
         "Plain-English guide to Detroit energy benchmarking: who's covered, the June 1 deadline, Detroit Building ID, ENERGY STAR Portfolio Manager, tenant consent and verification.",
       path: "/detroit-benchmarking-guide",
@@ -38,7 +38,7 @@ const TOC = [
   ["verification", "Verification by a certified professional"],
   ["noncompliance", "What happens if you don't comply"],
   ["diy", "Do it yourself vs. hire help"],
-  ["help", "How Filewell can help"],
+  ["help", "How Lakeline can help"],
 ] as const;
 
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
@@ -149,7 +149,7 @@ function Guide() {
 
           <S id="verification" title="Verification by a certified professional">
             <p>Verification by a certified professional is <strong>required when the City calls for it</strong>. We'll confirm whether your building needs it. The professional can be a Michigan-licensed professional engineer or registered architect, or another trained individual acceptable to the City's BSEED department.</p>
-            <p>Verification is a separate professional service. Filewell arranges it through licensed engineering partners when it's due.</p>
+            <p>Verification is a separate professional service. Lakeline arranges it through licensed engineering partners when it's due.</p>
           </S>
           <InlineCta />
 
@@ -162,8 +162,8 @@ function Guide() {
             <p>Most managers hire help when they have several buildings, tenant-paid utilities, steam service, or a year when verification is required. Collecting utility data and tenant forms takes time, and mistakes can mean refiling. A service like ours trades a flat fee for that time and risk.</p>
           </S>
 
-          <S id="help" title="How Filewell can help">
-            <p>Filewell handles benchmarking compliance in Detroit end to end: collecting 12 months of utility and water data, chasing tenant consent forms, setting up and cleaning up Portfolio Manager, running data quality checks, arranging verification, when it's required, by a Michigan-licensed engineering partner, submitting to the City and sending you a one-page summary.</p>
+          <S id="help" title="How Lakeline can help">
+            <p>Lakeline handles benchmarking compliance in Detroit end to end: collecting 12 months of utility and water data, chasing tenant consent forms, setting up and cleaning up Portfolio Manager, running data quality checks, arranging verification, when it's required, by a Michigan-licensed engineering partner, submitting to the City and sending you a one-page summary.</p>
             <p>Pricing is flat and per building — see <Link to="/pricing">our pricing</Link>. Start with a <Link to="/free-check">free compliance check</Link> and we'll tell you exactly where your building stands.</p>
             <h3>Official sources</h3>
             <ul>

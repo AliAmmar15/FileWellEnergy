@@ -14,7 +14,7 @@ export const Route = createFileRoute("/free-check")({
     typeof s["sqft"] === "string" || typeof s["sqft"] === "number" ? { sqft: String(s["sqft"]).replace(/[^0-9]/g, "").slice(0, 9) } : {},
   head: () =>
     seo({
-      title: "Free Detroit Benchmarking Compliance Check | Filewell Energy",
+      title: "Free Detroit Benchmarking Compliance Check | Lakeline Energy",
       description:
         "Find out in one business day whether your Detroit building is covered, whether it's filed, what's needed and a flat price. Free, no obligation.",
       path: "/free-check",
@@ -125,7 +125,7 @@ function FreeCheck() {
             <div className="md:col-span-2">
               <label className="flex items-start gap-3 text-sm">
                 <input id="consent" type="checkbox" className="mt-0.5 h-5 w-5 accent-primary" checked={f.consent} onChange={(e) => set("consent")(e.target.checked)} {...aria("consent")} />
-                <span>I agree Filewell Energy may contact me about this request. <span className="text-destructive" aria-hidden="true">*</span></span>
+                <span>I agree Lakeline Energy may contact me about this request. <span className="text-destructive" aria-hidden="true">*</span></span>
               </label>
               {err("consent") && <p id="consent-err" className="mt-1 text-sm text-destructive" role="alert">{err("consent")}</p>}
             </div>
