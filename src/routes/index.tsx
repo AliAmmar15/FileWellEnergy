@@ -12,9 +12,9 @@ import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/")({
   head: () =>
     seo({
-      title: "Detroit Energy Benchmarking Filings, Handled | Lakeline Energy",
+      title: "Detroit Energy Benchmarking Compliance | Lakeline Energy",
       description:
-        "Lakeline files your building's energy and water benchmarking report with the City of Detroit for a flat fee. Get a free compliance check.",
+        "We file Detroit's energy and water benchmarking report for commercial and multifamily buildings of 25,000 square feet and up. Free compliance check.",
       path: "/",
     }),
   component: Home,
@@ -36,6 +36,8 @@ const QUICK = [
   { to: "/detroit-benchmarking-guide", label: "Read the Detroit guide" },
 ] as const;
 
+const HOME_FAQ_QUESTIONS = ["Can't I do it myself?", "What do you need from me?", "Do my tenants need to do anything?", "How long does it take?"];
+
 function Home() {
   const [t1, t2, t3] = PRICING.tiers;
   return (
@@ -45,16 +47,17 @@ function Home() {
         <div className="container-page grid gap-10 py-12 md:py-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center lg:gap-16">
           <div>
             <h1>
-              Detroit benchmarking filings, <span className="text-primary">handled for you.</span>
+              Detroit energy benchmarking filings, <span className="text-primary">handled for you.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg">
-              Detroit requires buildings of 25,000 sq ft and up to report energy and water use every year. Lakeline collects the data, deals with the utilities and tenants, runs the data checks and files it with the City. One flat fee per building.
+              The Detroit benchmarking ordinance requires buildings of 25,000 square feet and up to report energy and water use every year. Lakeline collects the data, deals with the utilities and tenants, runs the data checks and files it with the City. One flat fee per building.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="cta" size="xl"><Link to="/free-check">Get a free compliance check</Link></Button>
               <Button asChild variant="outlineBrand" size="xl" className="rounded-md"><Link to="/am-i-covered">Am I covered?</Link></Button>
             </div>
             <p className="mt-6 text-[15px] text-muted-foreground"><DaysLeft /></p>
+            <p className="mt-3 text-[16px]">New to the ordinance? Read our <Link to="/detroit-benchmarking-guide" className="text-link">Detroit benchmarking guide</Link> or see <Link to="/how-it-works" className="text-link">how the filing process works</Link>.</p>
           </div>
           <Photo name="guardian" priority imgClassName="aspect-[4/3] rounded-xl" note="Guardian Building, downtown Detroit" />
         </div>
@@ -90,7 +93,7 @@ function Home() {
             </div>
             <div className="border-t-4 border-primary pt-5">
               <h3>When it's due</h3>
-              <p className="mt-2">June 1 every year. Each report covers the previous calendar year, January through December, of electricity, gas, steam and water use.</p>
+              <p className="mt-2">The June 1 deadline repeats every year. Each report covers the previous calendar year, January through December, of electricity, gas, steam and water use.</p>
             </div>
             <div className="border-t-4 border-primary pt-5">
               <h3>What happens if you don't file</h3>
@@ -105,7 +108,7 @@ function Home() {
         <div className="container-page grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           <Photo name="freePress" imgClassName="aspect-[4/3] rounded-xl" note="Free Press Building, now apartments" />
           <div>
-            <h2>End-to-end benchmarking service</h2>
+            <h2>End-to-end benchmarking compliance</h2>
             <p className="mt-4">You send us a few documents. We handle everything else, from the first utility request to the City's confirmation.</p>
             <ul className="mt-6 space-y-3">
               {[
@@ -171,7 +174,7 @@ function Home() {
       <section className="section-y">
         <div className="container-page max-w-[860px]">
           <h2 className="mb-8 text-center">Frequently asked questions</h2>
-          <FaqAccordion items={[7, 9, 5, 8].flatMap((i) => FAQS[i] ?? [])} />
+          <FaqAccordion items={HOME_FAQ_QUESTIONS.flatMap((q) => FAQS.find((f) => f.q === q) ?? [])} />
           <p className="mt-6 text-center"><Link to="/faq" className="text-link">All questions</Link></p>
         </div>
       </section>

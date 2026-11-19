@@ -8,10 +8,11 @@ import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/how-it-works")({
   head: () =>
     seo({
-      title: "How Our Detroit Benchmarking Service Works | Lakeline Energy",
+      title: "How Detroit Benchmarking Filing Works | Lakeline Energy",
       description:
-        "Five steps from free check to filed: utility data, tenant consents, ENERGY STAR Portfolio Manager setup, data quality checks and submission before the June 1 Detroit deadline.",
+        "Five steps from free check to filed: utility data, tenant consents, ENERGY STAR Portfolio Manager, data checks and submission by the June 1 deadline.",
       path: "/how-it-works",
+      crumb: "How It Works",
     }),
   component: HowItWorks,
 });
@@ -38,8 +39,8 @@ const YEAR = [
 function HowItWorks() {
   return (
     <>
-      <PageIntro photo="fisher" title="How Lakeline handles your benchmarking">
-        One agreement, one point of contact, and a filing submitted to the City before the June 1 benchmarking deadline in Detroit.
+      <PageIntro photo="fisher" title="How Lakeline files your Detroit energy benchmarking">
+        One agreement, one point of contact, and a filing submitted to the City before the June 1 deadline. New to the ordinance? Read our <Link to="/detroit-benchmarking-guide" className="text-link">Detroit benchmarking guide</Link> or see <Link to="/pricing" className="text-link">benchmarking pricing</Link>.
       </PageIntro>
 
       {/* Steps */}

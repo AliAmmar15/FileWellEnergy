@@ -35,7 +35,7 @@ export function PageIntro({ title, children, photo = "freePress" }: { eyebrow?: 
           <h1>{title}</h1>
           {children && <div className="mt-5 max-w-2xl text-lg">{children}</div>}
         </div>
-        {photo && <Photo name={photo} priority imgClassName="aspect-[16/10] rounded-xl" className="hidden lg:flex" />}
+        {photo && <Photo name={photo} priority sizes="(min-width: 1024px) 480px, 1px" imgClassName="aspect-[16/10] rounded-xl" className="hidden lg:flex" />}
       </div>
     </section>
   );

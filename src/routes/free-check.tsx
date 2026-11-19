@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -14,10 +14,11 @@ export const Route = createFileRoute("/free-check")({
     typeof s["sqft"] === "string" || typeof s["sqft"] === "number" ? { sqft: String(s["sqft"]).replace(/[^0-9]/g, "").slice(0, 9) } : {},
   head: () =>
     seo({
-      title: "Free Detroit Benchmarking Compliance Check | Lakeline Energy",
+      title: "Free Benchmarking Compliance Check | Lakeline Energy",
       description:
-        "Find out in one business day whether your Detroit building is covered, whether it's filed, what's needed and a flat price. Free, no obligation.",
+        "Free Detroit benchmarking compliance check: we confirm if your building is covered, whether it has filed, what's needed and a flat price.",
       path: "/free-check",
+      crumb: "Free Compliance Check",
     }),
   component: FreeCheck,
 });
@@ -70,8 +71,8 @@ function FreeCheck() {
 
   return (
     <>
-      <PageIntro photo="guardian" eyebrow="Free compliance check" title="Get your free compliance check">
-        Tell us about your building(s). Within one business day, we'll send a one-page check showing whether you're covered, whether you've filed, what's needed and a flat price.
+      <PageIntro photo="guardian" eyebrow="Free compliance check" title="Free Detroit benchmarking compliance check">
+        Tell us about your building(s). Within one business day, we'll send a one-page check showing whether you're covered, whether you've filed, what's needed and a flat price. Not sure yet? Read our <Link to="/detroit-benchmarking-guide" className="text-link">Detroit benchmarking guide</Link> or see <Link to="/pricing" className="text-link">pricing</Link>.
       </PageIntro>
       <section className="container-page grid gap-10 py-14 lg:grid-cols-[1.4fr_1fr]">
         {status === "done" ? (

@@ -59,7 +59,7 @@ export function QuickCheckForm() {
       <Honeypot value={f.website} onChange={(v) => setF((p) => ({ ...p, website: v }))} />
       <div><label htmlFor="q-name" className={lab}>Your name</label><input {...a("name")} autoComplete="name" className={input} value={f.name} onChange={set("name")} />{er("name")}</div>
       <div><label htmlFor="q-email" className={lab}>Email</label><input {...a("email")} type="email" autoComplete="email" className={input} value={f.email} onChange={set("email")} />{er("email")}</div>
-      <div><label htmlFor="q-company" className={lab}>Management company <span className="font-normal opacity-80">(optional)</span></label><input {...a("company")} autoComplete="organization" className={input} value={f.company} onChange={set("company")} /></div>
+      <div><label htmlFor="q-company" className={lab}>Management company <span className="font-normal">(optional)</span></label><input {...a("company")} autoComplete="organization" className={input} value={f.company} onChange={set("company")} /></div>
       <div><label htmlFor="q-building_count" className={lab}>Number of buildings</label><input {...a("building_count")} type="number" min={1} inputMode="numeric" className={input} value={f.building_count} onChange={set("building_count")} />{er("building_count")}</div>
       <div className="sm:col-span-2"><label htmlFor="q-addresses" className={lab}>Building addresses, one per line</label><textarea {...a("addresses")} rows={4} className={input} value={f.addresses} onChange={set("addresses")} />{er("addresses")}</div>
       <div className="sm:col-span-2">

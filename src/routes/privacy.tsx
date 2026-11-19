@@ -4,7 +4,7 @@ import { SITE } from "@/lib/site";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => seo({ title: "Privacy Policy | Lakeline Energy", description: "How Lakeline Energy collects, uses and protects information submitted through this website.", path: "/privacy" }),
+  head: () => seo({ title: "Privacy Policy | Lakeline Energy", description: "How Lakeline Energy collects, uses and protects information submitted through this website.", path: "/privacy", crumb: "Privacy Policy" }),
   component: () => (
     <>
       <PageIntro photo={null} title="Privacy Policy">[Have an attorney review]</PageIntro>

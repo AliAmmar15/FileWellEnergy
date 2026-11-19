@@ -11,10 +11,11 @@ import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/am-i-covered")({
   head: () =>
     seo({
-      title: "Am I Covered by Detroit's Benchmarking Ordinance? | Lakeline Energy",
+      title: "Am I Covered by Detroit Benchmarking? | Lakeline Energy",
       description:
-        "Check in seconds whether your Detroit building must report energy and water use under the benchmarking ordinance. Free, no sign-up, nothing stored.",
+        "Is your building covered by the Detroit benchmarking ordinance? Commercial and multifamily buildings of 25,000 square feet and up must report.",
       path: "/am-i-covered",
+      crumb: "Am I Covered?",
     }),
   component: AmICovered,
 });
@@ -63,8 +64,8 @@ function AmICovered() {
 
   return (
     <>
-      <PageIntro photo="hibbard" eyebrow="Am I covered?" title="Is your Detroit building required to report?">
-        Answer four questions for a quick estimate. Nothing you enter here is stored.
+      <PageIntro photo="hibbard" eyebrow="Am I covered?" title="Is your Detroit building required to benchmark?">
+        Answer four questions for a quick estimate. Nothing you enter here is stored. Want the details first? Read our <Link to="/detroit-benchmarking-guide" className="text-link">Detroit benchmarking ordinance guide</Link>.
       </PageIntro>
       <section className="container-page grid gap-8 py-16 lg:grid-cols-2">
         <form onSubmit={submit} className="space-y-6 rounded-xl bg-card p-6 md:p-8" noValidate>

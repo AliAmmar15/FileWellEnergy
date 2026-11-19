@@ -4,7 +4,7 @@ import { SITE } from "@/lib/site";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/terms")({
-  head: () => seo({ title: "Terms of Use | Lakeline Energy", description: "Terms for using the Lakeline Energy website and its Detroit benchmarking information.", path: "/terms" }),
+  head: () => seo({ title: "Terms of Use | Lakeline Energy", description: "Terms for using the Lakeline Energy website and its Detroit benchmarking information.", path: "/terms", crumb: "Terms of Use" }),
   component: () => (
     <>
       <PageIntro photo={null} title="Terms of Use">[Have an attorney review]</PageIntro>

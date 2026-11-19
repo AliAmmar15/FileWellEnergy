@@ -12,10 +12,11 @@ import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/pricing")({
   head: () =>
     seo({
-      title: "Detroit Benchmarking Pricing — From $600 per Building | Lakeline Energy",
+      title: "Detroit Benchmarking Pricing, Flat Fee | Lakeline Energy",
       description:
-        "Flat, per-building pricing for Detroit energy benchmarking: $750, $675 or $600 per building by portfolio size. Free compliance check.",
+        "Flat per-building Detroit benchmarking pricing: $750 for 1–4 buildings, $675 for 5–19, $600 for 20+. 50% at signing. Free compliance check.",
       path: "/pricing",
+      crumb: "Pricing",
     }),
   component: Pricing,
 });
@@ -69,8 +70,8 @@ function Pricing() {
   ];
   return (
     <>
-      <PageIntro photo="market" title="Simple, per-building pricing">
-        Flat fees for Detroit energy and water reporting. Billing is 50% at signing and 50% when your filing is submitted. The compliance check is free.
+      <PageIntro photo="market" title="Detroit benchmarking pricing: simple and per building">
+        Flat fees for Detroit energy and water reporting. Billing is 50% at signing and 50% when your filing is submitted. The compliance check is free. See <Link to="/how-it-works" className="text-link">how our Detroit benchmarking filing works</Link> or read the <Link to="/detroit-benchmarking-guide" className="text-link">Detroit benchmarking guide</Link>.
       </PageIntro>
 
       {/* Tiers */}

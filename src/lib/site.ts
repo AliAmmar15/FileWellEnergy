@@ -8,7 +8,7 @@ export const SITE = {
   phone: "586-668-5858",
   email: "info@lakelineenergy.com",
   url: "https://lakelineenergy.com",
-  guideUpdated: "November 19, 2026",
+  guideUpdatedISO: "2026-11-19",
   tagline: "We file it. You're covered.",
   description:
     "Lakeline Energy handles Detroit energy and water benchmarking filings for commercial and multifamily buildings — flat fee, done for you, local.",
@@ -29,3 +29,8 @@ export const NAV = [
 ] as const;
 
 export const UTM_KEY = "lakeline_utm";
+
+/** Human-readable date for the guide's "last updated" line, derived from the ISO date. */
+export const guideUpdatedLabel = new Date(`${SITE.guideUpdatedISO}T12:00:00Z`).toLocaleDateString("en-US", {
+  month: "long", day: "numeric", year: "numeric", timeZone: "UTC",
+});

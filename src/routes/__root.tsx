@@ -11,22 +11,30 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import montserratUrl from "@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2?url";
+import sourceSansUrl from "@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { SITE, UTM_KEY } from "@/lib/site";
+import { organizationSchema } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
     <div className="container-page flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
+      <meta name="robots" content="noindex, follow" />
       <p className="eyebrow">404</p>
       <h1 className="mt-3 text-4xl font-bold">We couldn't find that page</h1>
-      <p className="mt-3 max-w-md text-muted-foreground">The page may have moved. You can head home or get your free compliance check.</p>
+      <p className="mt-3 max-w-md text-muted-foreground">The page may have moved. You can head home or get your free Detroit benchmarking compliance check.</p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Button asChild variant="cta" size="xl"><Link to="/free-check">Get a free compliance check</Link></Button>
         <Button asChild variant="outlineBrand" size="xl"><Link to="/">Go home</Link></Button>
       </div>
+      <p className="mt-8 text-[16px] text-muted-foreground">
+        Or try the <Link to="/detroit-benchmarking-guide" className="text-link">Detroit benchmarking guide</Link>,{" "}
+        <Link to="/pricing" className="text-link">pricing</Link> or the <Link to="/faq" className="text-link">FAQ</Link>.
+      </p>
     </div>
   );
 }
@@ -50,50 +58,25 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   );
 }
 
-const orgJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: SITE.legalName,
-  url: SITE.url,
-  description: SITE.description,
-  areaServed: [
-    { "@type": "City", name: "Detroit, Michigan" },
-    ...["Ann Arbor", "Indianapolis", "Columbus", "Chicago", "Kansas City", "St. Louis", "Milwaukee", "Minneapolis"].map((name) => ({ "@type": "City", name })),
-  ],
-  address: { "@type": "PostalAddress", addressLocality: "Detroit", addressRegion: "MI", addressCountry: "US" },
-  telephone: SITE.phone,
-  email: SITE.email,
-  priceRange: "$$",
-};
-
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lakeline Energy — Detroit Energy & Water Benchmarking" },
+      { title: "Detroit Energy Benchmarking Compliance | Lakeline Energy" },
       { name: "description", content: SITE.description },
-      { property: "og:site_name", content: "Lakeline Energy" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: `${SITE.url}/og-image.png` },
-      { name: "twitter:image", content: `${SITE.url}/og-image.png` },
       { name: "theme-color", content: "#133F4F" },
     ],
     links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap",
-      },
+      { rel: "preload", href: sourceSansUrl, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+      { rel: "preload", href: montserratUrl, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", sizes: "any" },
       { rel: "icon", href: "/favicon-32.png", type: "image/png", sizes: "32x32" },
       { rel: "icon", href: "/icon-512.png", type: "image/png", sizes: "512x512" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
     ],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(orgJsonLd) }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(organizationSchema()) }],
   }),
   shellComponent: RootShell,
   component: RootComponent,
