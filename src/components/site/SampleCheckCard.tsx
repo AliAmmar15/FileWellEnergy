@@ -3,8 +3,8 @@ const rows: [string, string, boolean?][] = [
   ["Square footage", "41,000 sq ft, office"],
   ["Covered", "Yes"],
   ["City status", "Not marked compliant", true],
-  ["Needed", "12 months of DTE and water data, 3 tenant consent forms, verification if the City requires it"],
-  ["Flat fee", "$750 filing + $600 verification (if required)"],
+  ["Needed", "12 months of DTE and water data, 3 tenant consent forms"],
+  ["Flat fee", "$750 filing"],
   ["We'd file by", "April 30"],
 ];
 

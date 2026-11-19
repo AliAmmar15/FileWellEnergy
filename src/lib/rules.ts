@@ -6,7 +6,6 @@ export const PRICING = {
     { min: 5, max: 19, rate: 675, label: "5–19 buildings" },
     { min: 20, max: Infinity, rate: 600, label: "20+ buildings" },
   ],
-  verification: 600,
   auditLevel1From: 3000,
   auditLevel2From: 15000,
   depositShare: 0.5,
@@ -18,14 +17,11 @@ export function perBuildingRate(buildings: number): number {
   return 750;
 }
 
-export function estimatePortfolio(buildings: number, verifications: number) {
+export function estimatePortfolio(buildings: number) {
   const b = Math.max(0, Math.floor(buildings || 0));
-  const v = Math.min(b, Math.max(0, Math.floor(verifications || 0)));
   const rate = b > 0 ? perBuildingRate(b) : 0;
-  const benchmarking = rate * b;
-  const verification = PRICING.verification * v;
-  const total = benchmarking + verification;
-  return { buildings: b, verifications: v, rate, benchmarking, verification, total, deposit: total * PRICING.depositShare };
+  const total = rate * b;
+  return { buildings: b, rate, total, deposit: total * PRICING.depositShare };
 }
 
 /** Next June 1 deadline. On or before June 1 counts to this year's; after June 1, next year's. */

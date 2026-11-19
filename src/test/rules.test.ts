@@ -13,12 +13,14 @@ describe("pricing", () => {
   it("charges $600 per building for 20+ buildings", () => {
     expect(perBuildingRate(20)).toBe(600);
   });
-  it("adds $600 per verification and a 50% deposit", () => {
-    const e = estimatePortfolio(5, 2);
-    expect(e.benchmarking).toBe(3375);
-    expect(e.verification).toBe(1200);
-    expect(e.total).toBe(4575);
-    expect(e.deposit).toBe(2287.5);
+  it("totals the per-building rate and takes a 50% deposit", () => {
+    const e = estimatePortfolio(5);
+    expect(e.rate).toBe(675);
+    expect(e.total).toBe(3375);
+    expect(e.deposit).toBe(1687.5);
+  });
+  it("estimates zero for no buildings", () => {
+    expect(estimatePortfolio(0).total).toBe(0);
   });
 });
 

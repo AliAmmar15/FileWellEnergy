@@ -1,13 +1,14 @@
 // ============================================================
-// Site-wide contact details. email is temporary — swap for a branded address once the domain is set up.
+// Single source of truth for contact details and the site URL. Every page reads from here.
 // ============================================================
 export const SITE = {
   name: "Lakeline Energy",
   legalName: "Lakeline Energy",
   founder: "Ali Ammar",
   phone: "586-668-5858",
-  email: "aammar0712@gmail.com",
-  guideUpdated: "November 10, 2026",
+  email: "info@lakelineenergy.com",
+  url: "https://lakelineenergy.com",
+  guideUpdated: "November 19, 2026",
   tagline: "We file it. You're covered.",
   description:
     "Lakeline Energy handles Detroit energy and water benchmarking filings for commercial and multifamily buildings — flat fee, done for you, local.",

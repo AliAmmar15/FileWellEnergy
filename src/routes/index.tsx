@@ -48,7 +48,7 @@ function Home() {
               Detroit benchmarking filings, <span className="text-primary">handled for you.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg">
-              Detroit requires buildings of 25,000 sq ft and up to report energy and water use every year. Lakeline collects the data, deals with the utilities and tenants, arranges verification when the City requires it and files it with the City. One flat fee per building.
+              Detroit requires buildings of 25,000 sq ft and up to report energy and water use every year. Lakeline collects the data, deals with the utilities and tenants, runs the data checks and files it with the City. One flat fee per building.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="cta" size="xl"><Link to="/free-check">Get a free compliance check</Link></Button>
@@ -94,7 +94,7 @@ function Home() {
             </div>
             <div className="border-t-4 border-primary pt-5">
               <h3>What happens if you don't file</h3>
-              <p className="mt-2">The City can issue a blight violation notice with a civil fine under Sec. 8-15-582(b) of the ordinance. Verification by a certified professional is required when the City calls for it. We'll confirm whether your building needs it.</p>
+              <p className="mt-2">Right now the City is in an amnesty period and isn't issuing fines. But every covered building's compliance status is on the City's public map, updated weekly, and lenders, buyers and tenants check it. Fines are expected once the amnesty ends.</p>
             </div>
           </div>
         </div>
@@ -113,7 +113,6 @@ function Home() {
                 "Tenant consent forms prepared and followed up",
                 "ENERGY STAR Portfolio Manager setup or cleanup, with your Detroit Building ID",
                 "Data quality checks before anything is submitted",
-                "Verification arranged with a Michigan-licensed engineering partner when due",
                 "Submission to the City, confirmation saved, one-page summary sent to you",
               ].map((t) => (
                 <li key={t} className="flex gap-3"><span aria-hidden="true" className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-primary" />{t}</li>
@@ -162,7 +161,7 @@ function Home() {
             ))}
           </div>
           <p className="mt-8 text-center">
-            Licensed verification {usd(PRICING.verification)} per building when due · Energy audits from {usd(PRICING.auditLevel1From)} ·{" "}
+            Energy audits from {usd(PRICING.auditLevel1From)} ·{" "}
             <Link to="/pricing" className="text-link">Full pricing and estimate</Link>
           </p>
         </div>

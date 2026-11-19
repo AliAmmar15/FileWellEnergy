@@ -11,7 +11,7 @@ export const Route = createFileRoute("/terms")({
       <section className="container-page prose-guide max-w-3xl py-16">
         <p>By using this website you agree to these terms. Content on this site, including the Detroit Benchmarking Guide and the Am I Covered? tool, is general information and not legal advice. Confirm current requirements with the City of Detroit.</p>
         <h2>Services</h2>
-        <p>Services are provided under a separate written agreement with {SITE.legalName}. Verification is performed by independent, Michigan-licensed engineering partners.</p>
+        <p>Services are provided under a separate written agreement with {SITE.legalName}.</p>
         <h2>No affiliation</h2>
         <p>Lakeline Energy is not affiliated with the City of Detroit or the U.S. EPA. ENERGY STAR® is a registered mark of the U.S. EPA.</p>
         <h2>Contact</h2>

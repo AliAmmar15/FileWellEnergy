@@ -10,7 +10,7 @@ export const Route = createFileRoute("/how-it-works")({
     seo({
       title: "How Our Detroit Benchmarking Service Works | Lakeline Energy",
       description:
-        "Six steps from free check to filed: utility data, tenant consents, ENERGY STAR Portfolio Manager setup, licensed verification and submission before the June 1 Detroit deadline.",
+        "Five steps from free check to filed: utility data, tenant consents, ENERGY STAR Portfolio Manager setup, data quality checks and submission before the June 1 Detroit deadline.",
       path: "/how-it-works",
     }),
   component: HowItWorks,
@@ -46,7 +46,7 @@ function HowItWorks() {
       <section className="section-y">
         <div className="container-page">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="font-display text-[14px] font-bold uppercase tracking-wider text-primary">Six steps</p>
+            <p className="font-display text-[14px] font-bold uppercase tracking-wider text-primary">Five steps</p>
             <h2 className="mt-3">From first email to the City's confirmation</h2>
           </div>
           <ol className="mt-12 divide-y divide-hairline border-y border-hairline">

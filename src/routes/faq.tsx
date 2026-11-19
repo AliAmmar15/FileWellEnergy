@@ -18,7 +18,7 @@ export const Route = createFileRoute("/faq")({
     ...seo({
       title: "Detroit Benchmarking Ordinance FAQ | Lakeline Energy",
       description:
-        "Answers about the Detroit benchmarking ordinance: who's covered, the June 1 deadline, Detroit Building IDs, tenant consent forms, verification and costs.",
+        "Answers about the Detroit benchmarking ordinance: who's covered, the June 1 deadline, Detroit Building IDs, tenant consent forms and costs.",
       path: "/faq",
     }),
     scripts: [{ type: "application/ld+json", children: JSON.stringify(faqSchema) }],

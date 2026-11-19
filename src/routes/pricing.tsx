@@ -14,7 +14,7 @@ export const Route = createFileRoute("/pricing")({
     seo({
       title: "Detroit Benchmarking Pricing — From $600 per Building | Lakeline Energy",
       description:
-        "Flat, per-building pricing for Detroit energy benchmarking: $750, $675 or $600 per building by portfolio size. Licensed verification $600. Free compliance check.",
+        "Flat, per-building pricing for Detroit energy benchmarking: $750, $675 or $600 per building by portfolio size. Free compliance check.",
       path: "/pricing",
     }),
   component: Pricing,
@@ -22,12 +22,10 @@ export const Route = createFileRoute("/pricing")({
 
 function Estimator() {
   const [b, setB] = useState("5");
-  const [v, setV] = useState("1");
-  const e = estimatePortfolio(Number(b), Number(v));
+  const e = estimatePortfolio(Number(b));
   const rows: [string, string][] = [
     ["Per-building rate", e.rate ? usd(e.rate) : "—"],
-    [`Benchmarking subtotal (${e.buildings})`, usd(e.benchmarking)],
-    [`Verification subtotal (${e.verifications})`, usd(e.verification)],
+    [`Benchmarking subtotal (${e.buildings})`, usd(e.total)],
   ];
   return (
     <section aria-labelledby="est-h" className="rounded-xl bg-background p-7 md:p-10">
@@ -38,11 +36,6 @@ function Estimator() {
           <div className="space-y-2">
             <Label htmlFor="est-b">Number of buildings</Label>
             <Input id="est-b" type="number" inputMode="numeric" min={1} value={b} onChange={(x) => setB(x.target.value)} className="h-11" />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="est-v">Number needing verification this year</Label>
-            <Input id="est-v" type="number" inputMode="numeric" min={0} value={v} onChange={(x) => setV(x.target.value)} className="h-11" />
-            <p className="text-xs text-muted-foreground">Required when the City calls for it. We'll confirm whether your building needs it.</p>
           </div>
         </div>
         <div aria-live="polite">
@@ -70,10 +63,9 @@ function Estimator() {
 }
 
 function Pricing() {
-  const VERIF_AUDIT = [
-    { t: "Licensed verification", p: usd(PRICING.verification), u: "per building, when due", d: "Required when the City calls for it. We'll confirm whether your building needs it. Completed by a Michigan-licensed engineering partner, arranged and coordinated by us." },
+  const AUDITS = [
     { t: "Level 1 energy audit", p: `from ${usd(PRICING.auditLevel1From)}`, u: "optional", d: "A walk-through of the building with a list of low-cost ways to cut energy use." },
-    { t: "Level 2 energy audit", p: `from ${usd(PRICING.auditLevel2From)}`, u: "optional", d: "A detailed savings study, delivered with a partner engineering firm." },
+    { t: "Level 2 energy audit", p: `from ${usd(PRICING.auditLevel2From)}`, u: "optional", d: "A detailed savings study, delivered with a partner firm." },
   ];
   return (
     <>
@@ -116,12 +108,12 @@ function Pricing() {
         </div>
       </section>
 
-      {/* Verification and audits */}
+      {/* Audits */}
       <section className="section-y">
         <div className="container-page">
-          <h2 className="text-center">Verification and audits</h2>
+          <h2 className="text-center">Optional energy audits</h2>
           <div className="mt-10 divide-y divide-hairline border-y border-hairline">
-            {VERIF_AUDIT.map((r) => (
+            {AUDITS.map((r) => (
               <div key={r.t} className="grid gap-3 py-7 md:grid-cols-[15rem_minmax(0,1fr)_13rem] md:items-center md:gap-10">
                 <h3 className="text-[22px]">{r.t}</h3>
                 <p>{r.d}</p>
@@ -141,7 +133,6 @@ function Pricing() {
             <div className="mt-6">
               <FaqAccordion
                 items={[
-                  { q: "Why is verification separate?", a: "Verification is required when the City calls for it. We'll confirm whether your building needs it. A licensed engineer performs it, which is a separate professional service, so you only pay for it in the years it's due." },
                   { q: "Do you discount for multi-year agreements?", a: "Yes. Ask us." },
                   { q: "When do I pay?", a: "50% at signing and 50% when your filing is submitted." },
                 ]}

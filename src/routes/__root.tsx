@@ -54,6 +54,7 @@ const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: SITE.legalName,
+  url: SITE.url,
   description: SITE.description,
   areaServed: [
     { "@type": "City", name: "Detroit, Michigan" },
@@ -75,9 +76,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Lakeline Energy" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      // TODO: og:image/twitter:image should be absolute URLs once the domain is set: [DOMAIN]/og-image.png
-      { property: "og:image", content: "/og-image.png" },
-      { name: "twitter:image", content: "/og-image.png" },
+      { property: "og:image", content: `${SITE.url}/og-image.png` },
+      { name: "twitter:image", content: `${SITE.url}/og-image.png` },
       { name: "theme-color", content: "#133F4F" },
     ],
     links: [
@@ -108,7 +108,7 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
         {/*
           Cookie-free analytics placeholder (Plausible). Uncomment and set your domain to enable:
-          <script defer data-domain="[DOMAIN]" src="https://plausible.io/js/script.js"></script>
+          <script defer data-domain="lakelineenergy.com" src="https://plausible.io/js/script.js"></script>
         */}
       </head>
       <body>

@@ -13,7 +13,7 @@ export const Route = createFileRoute("/detroit-benchmarking-guide")({
     ...seo({
       title: "Detroit Benchmarking Ordinance Guide (Plain English) | Lakeline Energy",
       description:
-        "Plain-English guide to Detroit energy benchmarking: who's covered, the June 1 deadline, Detroit Building ID, ENERGY STAR Portfolio Manager, tenant consent and verification.",
+        "Plain-English guide to Detroit energy benchmarking: who's covered, the June 1 deadline, Detroit Building ID, ENERGY STAR Portfolio Manager, tenant consent and data checks.",
       path: "/detroit-benchmarking-guide",
     }),
     scripts: [
@@ -35,7 +35,6 @@ const TOC = [
   ["dbid", "How to find your Detroit Building ID"],
   ["portfolio-manager", "Using ENERGY STAR Portfolio Manager"],
   ["tenant-consent", "Tenant consent forms for DTE data"],
-  ["verification", "Verification by a certified professional"],
   ["noncompliance", "What happens if you don't comply"],
   ["diy", "Do it yourself vs. hire help"],
   ["help", "How Lakeline can help"],
@@ -87,7 +86,7 @@ function Guide() {
 
           <S id="requires" title="What the ordinance requires">
             <p>Detroit's Energy and Water Benchmarking Ordinance asks owners of larger buildings to measure and report how much energy and water their building uses each year. The idea is simple: what gets measured can be compared, and what can be compared can be improved.</p>
-            <p>In practice, that means each covered building must gather a full year of utility data, enter it into the U.S. EPA's free ENERGY STAR Portfolio Manager tool, and submit the results to the City. When the City calls for it, the report must also be checked and attested to by a certified professional.</p>
+            <p>In practice, that means each covered building must gather a full year of utility data, enter it into the U.S. EPA's free ENERGY STAR Portfolio Manager tool, and submit the results to the City. No outside professional sign-off is required: Portfolio Manager's automatic data verification checks your data as you go.</p>
             <p>The City's public dataset (Sept 2025) lists about 2,900 covered buildings, with only about 1 in 5 marked compliant (Source: City of Detroit open data). If you haven't filed yet, you're far from alone — but it's worth getting ahead of. The City's own page is the best place to confirm details: <a href={LINKS.cityBenchmarking} {...ext}>detroitmi.gov/benchmarking</a>.</p>
             <p>Each building's compliance status, size and age are published on the City's public transparency map, so you can see how your building (and your neighbors) appear.</p>
           </S>
@@ -147,23 +146,17 @@ function Guide() {
             <p>Collecting those forms — and following up on them — is often the slowest step. Plan for it early.</p>
           </S>
 
-          <S id="verification" title="Verification by a certified professional">
-            <p>Verification by a certified professional is <strong>required when the City calls for it</strong>. We'll confirm whether your building needs it. The professional can be a Michigan-licensed professional engineer or registered architect, or another trained individual acceptable to the City's BSEED department.</p>
-            <p>Verification is a separate professional service. Lakeline arranges it through licensed engineering partners when it's due.</p>
-          </S>
-          <InlineCta />
-
           <S id="noncompliance" title="What happens if you don't comply">
-            <p>Noncompliance can result in a blight violation notice with a civil fine under Sec. 8-15-582(b) of the ordinance. Beyond the notice itself, it's one more item for owners, lenders and buyers to deal with — usually at an inconvenient time. Filing each year avoids the issue.</p>
+            <p>Right now the City is in an amnesty period and isn't issuing fines. But every covered building's compliance status is on the City's public map, updated weekly, and lenders, buyers and tenants check it. Fines are expected once the amnesty ends. Filing each year keeps your building in good standing on that map.</p>
           </S>
 
           <S id="diy" title="Do it yourself vs. hire help">
             <p>To be fair: you can absolutely do this yourself. Portfolio Manager is free, and the City publishes guidance. If you manage one building with a single utility account and no tenant-paid utilities, a careful afternoon or two may be enough.</p>
-            <p>Most managers hire help when they have several buildings, tenant-paid utilities, steam service, or a year when verification is required. Collecting utility data and tenant forms takes time, and mistakes can mean refiling. A service like ours trades a flat fee for that time and risk.</p>
+            <p>Most managers hire help when they have several buildings, tenant-paid utilities, or steam service. Collecting utility data and tenant forms takes time, and mistakes can mean refiling. A service like ours trades a flat fee for that time and risk.</p>
           </S>
 
           <S id="help" title="How Lakeline can help">
-            <p>Lakeline handles benchmarking compliance in Detroit end to end: collecting 12 months of utility and water data, chasing tenant consent forms, setting up and cleaning up Portfolio Manager, running data quality checks, arranging verification, when it's required, by a Michigan-licensed engineering partner, submitting to the City and sending you a one-page summary.</p>
+            <p>Lakeline handles benchmarking compliance in Detroit end to end: collecting 12 months of utility and water data, chasing tenant consent forms, setting up and cleaning up Portfolio Manager, running Portfolio Manager's data quality checks on every building, submitting to the City and sending you a one-page summary.</p>
             <p>Pricing is flat and per building — see <Link to="/pricing">our pricing</Link>. Start with a <Link to="/free-check">free compliance check</Link> and we'll tell you exactly where your building stands.</p>
             <h3>Official sources</h3>
             <ul>
