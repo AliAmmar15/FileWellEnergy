@@ -3,8 +3,6 @@ import "./lib/error-capture";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 
-const CANONICAL_HOST = "lakelineenergy.com";
-
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
 };
@@ -51,14 +49,7 @@ function isH3SwallowedErrorBody(body: string): boolean {
 // twice and renders garbled.
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
-    // Single canonical host: send www to the bare domain so only one version is live.
-    const url = new URL(request.url);
-    if (url.hostname === `www.${CANONICAL_HOST}`) {
-      url.hostname = CANONICAL_HOST;
-      url.protocol = "https:";
-      url.port = "";
-      return Response.redirect(url.toString(), 301);
-    }
+    // www/apex redirects are configured in the hosting dashboard (Vercel Domains), not here.
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
